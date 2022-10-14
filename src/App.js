@@ -12,7 +12,7 @@ function App() {
       </div>
 
       <h1>Hello this is the instagram clone</h1>
-
+      
 
       {/* Posts */}
       {/* posts */}
