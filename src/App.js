@@ -1,23 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Post from './Post'; // importing post function
+import { db } from './firebase';
 
 
 // App function
 function App() {
   // React hook - short piece of functional code & state- short term memory storage in react
-  const [posts, setPosts] = useState([
-    {
-      username:"Marcus",
-      caption:"Wow it works",
-      imageUrl:"https://media.istockphoto.com/photos/aerial-view-of-lower-manhattan-new-york-picture-id946087016?k=20&m=946087016&s=612x612&w=0&h=5k1qMeooPXIBjCt6R5nUi_Mb4_PkhliKpBXDnfEGGww="
-    },
-    {
-      username:"Dylan",
-      caption:"Wow it works",
-      imageUrl:"https://media.istockphoto.com/photos/mountain-landscape-picture-id517188688?k=20&m=517188688&s=612x612&w=0&h=i38qBm2P-6V4vZVEaMy_TaTEaoCMkYhvLCysE7yJQ5Q="
-    },
-  ]);
+  const [posts, setPosts] = useState([]);
+
+
+  // userEffect - Runs a piece of code based on a specific conditionm can have multiple of these functions
+  useEffect(() => {
+    // this is where the code runs
+    db.collection('posts').onSnapshot(snapshot => {
+      // everytime a new post is added, this code is fired
+      setPosts(snapshot.docs.map(doc => doc.data()))
+    })
+  }, []) // <- Run it the number of times right now only once
+
 
   return (
     <div className="app">
