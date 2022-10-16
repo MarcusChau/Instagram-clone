@@ -1,5 +1,5 @@
 import React from 'react'; /* rfce command  */
-import './Post.css';
+import './css/Post.css';
 
 
 // Post function 
@@ -23,7 +23,7 @@ function Post({username, caption, imageUrl}) {
 
 
         {/* Image */}
-        <img className='post__image' src={imageUrl} alt="Holder"/>
+        <img className='post__image' src={imageUrl} alt="Post"/>
 
 
         {/* username + caption */}
