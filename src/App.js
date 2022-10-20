@@ -5,6 +5,7 @@ import Dashboard from './Component/Dashboard.js';
 import SignIn from './Component/SignIn';
 import { auth, db } from './firebase';
 import 'reactjs-popup/dist/index.css';
+import ImageUpload from './ImageUpload';
 
 
 // App function
@@ -12,16 +13,16 @@ function App() {
 
   // React hook - short piece of functional code & state- short term memory storage in react
   const [posts, setPosts] = useState([]);
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState("");
   const [openSignIn, setOpenSignIn] = useState(false);
 
 
   auth.onAuthStateChanged(function(user) {
     if (user) {
-      setUser(true);
+      setUser(user);
     } else {
       // No user is signed in.
-      setUser(false);
+      setUser("");
     }
   })
 
@@ -42,6 +43,19 @@ function App() {
 
   return (
     <div className="app">
+
+      {/* I want to have... */}
+      {/* Caption input */}
+      {/* File picker */}
+      {/* Post button */}
+
+      {user?.displayName ? (
+        <ImageUpload username={user.displayName} />
+      ) : (
+        <h3>Sorry need to login to upload</h3>
+      )}
+      
+
 
       {/* Header */}
       <div className="app__header">
