@@ -13,3 +13,7 @@
   border-bottom: 1px solid lightgrey;
   object-fit: contain;
 }
+
+.logout {
+  display: flex;
+}

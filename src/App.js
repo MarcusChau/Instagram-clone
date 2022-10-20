@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './css/App.css';
 import Post from './Post'; // importing post function
-//import Button from './Button';
-import { db } from './firebase';
+import Dashboard from './Component/Dashboard.js';
+import SignIn from './Component/SignIn';
+import { auth, db } from './firebase';
 import 'reactjs-popup/dist/index.css';
 
 
@@ -11,6 +12,18 @@ function App() {
 
   // React hook - short piece of functional code & state- short term memory storage in react
   const [posts, setPosts] = useState([]);
+  const [user, setUser] = useState(true);
+  const [openSignIn, setOpenSignIn] = useState(false);
+
+
+  auth.onAuthStateChanged(function(user) {
+    if (user) {
+      setUser(true);
+    } else {
+      // No user is signed in.
+      setUser(false);
+    }
+  })
 
 
   // userEffect - Runs a piece of code based on a specific conditionm can have multiple of these functions
@@ -27,17 +40,6 @@ function App() {
   }, []); // <- Run it the number of times right now only once
 
 
-  // const logIn = (event) => {
-  //   alert("logIn?");
-  //   event.preventDefault();
-  // }
-
-  // const signUp = (event) => {
-  //   alert("Sign up?");
-  //   event.preventDefault();
-  // }
-
-
   return (
     <div className="app">
       {/* Header */}
@@ -47,9 +49,15 @@ function App() {
         src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" 
         alt="Instagram Logo" />
 
-        {/* Button logIn & SignUp */}
-        {/* <Button do={logIn} name="LogIn" className="app__log-in-button"/>
-        <Button do={signUp} name="SignUp" className="app__sign-in-button"/> */}
+        {user ? (
+          <button className='logout' onClick={() => auth.signOut()}>Logout</button>
+        ):(
+          <div className='app__logincontainer'>
+            <SignIn onClick={() => setOpenSignIn(true)}/>
+            <Dashboard/>
+        </div>
+        )}
+        
       </div>
 
       <h1>Hello this is the instagram clone</h1>
