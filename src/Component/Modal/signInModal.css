@@ -1,0 +1,64 @@
+.app__signup {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    padding: 15px 80px;
+    margin: 10px;
+  }
+
+.close-button {
+width: 300px;
+height: 35px;
+margin: 10px;
+font-size: 16px;
+font-weight: bold;
+background-color: gray;
+color: whitesmoke;
+box-shadow: 6px 6px 20px 8px rgb(209, 209, 209);
+border: 1px solid lightgrey;
+border-radius: 10px;
+cursor: pointer;
+}
+
+.modal-email {
+display: flex;
+}
+
+.modal-password {
+display: flex;
+}
+
+.sign-in-modal {
+width: 300px;
+height: 35px;
+margin: 10px;
+font-size: 16px;
+font-weight: bold;
+background-color: #0095f6;
+color: whitesmoke;
+box-shadow: 6px 6px 20px 8px rgb(209, 209, 209);
+border: 1px solid lightgrey;
+border-radius: 10px;
+cursor: pointer;
+}
+
+.input-field {
+    padding: 15px 80px;
+    margin: 10px;
+}
+
+.dashboard-sign-in {
+    font-size: 16px;
+    font-weight: bold;
+    width: 150px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: #0095f6;
+    color: whitesmoke;
+    box-shadow: 6px 6px 20px 8px lightsteelblue;
+    border: 1px solid lightgrey;
+    cursor: pointer;
+    margin: 15px;
+}

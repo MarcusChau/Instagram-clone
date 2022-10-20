@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Modal from './Modal/signInModel';
+import Modal from './Modal/signInModal';
+import './SignIn.css';
 import { auth } from '../firebase';
 
 class SignIn extends Component {
@@ -39,7 +40,6 @@ class SignIn extends Component {
     );
   }
 }
-
 
 
 export default SignIn

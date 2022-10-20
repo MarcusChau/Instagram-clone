@@ -19,5 +19,15 @@
 }
 
 .dashboard-sign-up {
-    
+    font-size: 16px;
+    font-weight: bold;
+    width: 150px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: #0095f6;
+    color: whitesmoke;
+    box-shadow: 6px 6px 20px 8px lightsteelblue;
+    border: 1px solid lightgrey;
+    cursor: pointer;
+    margin: 15px;
 }

@@ -49,23 +49,25 @@ function App() {
         src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" 
         alt="Instagram Logo" />
 
-        {user ? (
-          <button className='logout' onClick={() => auth.signOut()}>Logout</button>
-        ):(
-          <div className='app__logincontainer'>
-            <SignIn onClick={() => setOpenSignIn(true)}/>
-            <Dashboard/>
-        </div>
-        )}
-        
       </div>
+
+
+      {/* User login, sign up or logout */}
+      {user ? (
+        <button className='logout__button' onClick={() => auth.signOut()}>Logout</button>
+      ):(
+        <div className='app__logincontainer'>
+          <SignIn onClick={() => setOpenSignIn(true)}/>
+          <Dashboard/>
+      </div>
+      )}
+
 
       <h1>Hello this is the instagram clone</h1>
 
 
       {/* Getting Post function from import && using props in order to inherit different posts */}
       {/* Mapping the posts and looping through them and rendering posts */}
-
       {
         posts.map(({id, post}) => (
           <Post key={id} username={post.username} caption={post.caption} imageUrl={post.imageUrl} />
