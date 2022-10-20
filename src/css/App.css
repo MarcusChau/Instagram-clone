@@ -7,6 +7,7 @@
 }
 
 .app__header {
+  align-items: center;
   background-color: white;
   padding: 15px;
   margin: 15px;
@@ -20,6 +21,7 @@
 
 .app__logincontainer {
   display: flex;
+  object-fit: contain;
   flex-direction: row;
 }
 

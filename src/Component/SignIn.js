@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Modal from './Modal/signInModal';
 import './SignIn.css';
-import { auth } from '../firebase';
+
 
 class SignIn extends Component {
     
