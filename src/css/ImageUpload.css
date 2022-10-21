@@ -1,0 +1,31 @@
+.image__upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.caption__upload {
+    outline: none;
+    height: 30px;
+    padding-right: 50px;
+    flex: 1;
+}
+
+.progress__upload {
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+}
+
+.file__upload {
+    color: black;
+    font-weight: bold;
+}
+
+.bar {
+    width: 100px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: #0095f6;
+    color: aliceblue;
+    border: none;
+}

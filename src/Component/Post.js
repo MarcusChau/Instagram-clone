@@ -55,8 +55,8 @@ function Post({user, postId, username, caption, imageUrl}) {
             {/* Avatar */}
             <img 
             className='post__avatar' 
-            src="https://media.istockphoto.com/photos/aerial-view-of-lower-manhattan-new-york-picture-id946087016?k=20&m=946087016&s=612x612&w=0&h=5k1qMeooPXIBjCt6R5nUi_Mb4_PkhliKpBXDnfEGGww=" 
-            alt="Avatar" 
+            src= {imageUrl}
+            alt="Avatar"
             />
 
             {/* Username */}
@@ -81,7 +81,7 @@ function Post({user, postId, username, caption, imageUrl}) {
           }
         </div>
 
-        {user &&(
+        {user && (
             <form className='post__commentbox'>
             <input type="text"
               className='post__input'

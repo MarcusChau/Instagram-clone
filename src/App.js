@@ -77,37 +77,91 @@ function App() {
 
         <div className='app__postsright'>
           <div>
-            <h2>About</h2>
-            <p>This is an instagram clone with my own spin to it ...</p>
-
-
+            <h2 id='h2__elem'>About</h2>
+            <p className='under-about'>This is an instagram clone with my own spin to it . . .</p>
+            <p className='extra'>
+              Enjoy!!
+            </p>
           </div>
 
           <hr />
 
-          <div>
+          <div className='middle__app-vs'>
             <div>
-              <p>Latest Version</p>
-              <p>1.0.0</p>
+              <p id='bold-mid'>Latest Version</p>
+              <p className='verison__number'>1.0.0</p>
             </div>
             <br />
             <div>
-              <p>Created by:</p>
-              <p>Marcus Chau</p>
+              <p id='bold-mid'>Created by:</p>
+              <p className='createdby__me'>Marcus Chau</p>
             </div>
           </div>
 
+          <br />
+
+          <hr />
+
+          <div>
+            <h2 id='h2__elem'>Socials</h2>
+            <ul>
+              <li>
+                <a href="https://marcuschau.com/">Personal Website</a>
+              </li>
+              <li>
+                <a href="https://github.com/MarcusChau">GitHub</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/marcus-chau-b88878221/">LinkedIn</a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/marcusrchau/">Instagram</a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UCVr_FBbu-EICLoV8tuaU63A">Youtube</a>
+              </li>
+            </ul>
+          </div>
+
+          <br />
+
+          <hr />
+
+          <div className='user__profile'>
+            <h2 id='h2__elem'>Your Profile</h2>
+            <h4 id='h4__elem'>Username:</h4>
+            <div className='display__nameprofile'>
+              {user.displayName}
+            </div>
+            
+            <br />
+
+            <h4 id='h4__elem'>Six post captions:</h4>
+            {
+            posts.slice(0, 6).map(({post}) => (
+              <p className='captions__profile'>
+                 {'>'} {post.caption}
+              </p>
+            ))
+            }
+
+            <br />
+            <hr />
+          </div>
         </div>
       </div>
       
 
 
       {/* Image upload */}
-      {user?.displayName ? (
-        <ImageUpload username={user.displayName} />
-      ) : (
-        <h3>Sorry need to login to upload</h3>
-      )}
+      <div className='image__upload'>
+        {user?.displayName ? (
+          <ImageUpload username={user.displayName} />
+        ) : (
+          <p className='error__upload'>Sorry need to login to upload</p>
+        )}
+      </div>
+      
 
     </div>
   );

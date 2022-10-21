@@ -69,3 +69,89 @@ hr {
   background-color: #151515;
   box-shadow: 10px 10px 40px 2px rgb(209, 209, 209);
 }
+
+#h2__elem {
+  padding-top: 20px;
+  padding-left: 30px;
+  text-shadow: 2px 2px blueviolet;
+}
+
+.under-about {
+  padding: 15px 20px;
+  font-size: 14px;
+}
+
+.middle__app-vs {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#bold-mid {
+  font-weight: bold;
+  text-shadow: 2px 2px blueviolet;
+}
+
+.verison__number {
+  padding-left: 15px;
+  padding-top: 5px;
+}
+
+.createdby__me {
+  padding-left: 15px;
+  padding-top: 5px;
+}
+
+.extra {
+  padding: 15px 20px;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: aliceblue;
+}
+a:hover {
+  color: aquamarine;
+}
+a:visited {
+  text-decoration: none;
+}
+a:active { 
+  text-decoration: none; 
+}
+
+li {
+  list-style-type: none;
+  padding: 10px;
+}
+
+#h4__elem {
+  padding: 10px 20px;
+}
+
+.display__nameprofile {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.captions__profile {
+  padding: 5px 20px;
+}
+
+.image__upload {
+  position: sticky;
+  bottom: 0;
+  backdrop-filter: blur(5px);
+}
+
+.error__upload {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 5px;
+}
