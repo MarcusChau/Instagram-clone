@@ -67,7 +67,7 @@ function App() {
       <div className='app__posts'>
         {/* Getting Post function from import && using props in order to inherit different posts */}
         {/* Mapping the posts and looping through them and rendering posts */}
-        <div>
+        <div className='app__postsleft'>
           {
             posts.map(({id, post}) => (
               <Post key={id} username={post.username} caption={post.caption} imageUrl={post.imageUrl} />
@@ -75,10 +75,10 @@ function App() {
           }
         </div>
 
-        <div>
+        <div className='app__postsright'>
           <div>
             <h2>About</h2>
-            <p>React embedding thinggggg</p>
+            <p>This is an instagram clone with my own spin to it ...</p>
 
 
           </div>

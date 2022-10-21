@@ -49,3 +49,20 @@
   display: flex;
   justify-content: center;
 }
+
+hr {
+  margin: auto;
+  width: 65%;
+  background-color: darkslategray;
+}
+
+.app__postsright {
+  margin-left: 25px;
+  border-radius: 16px;
+  border: 1px solid lightgrey;
+  height: 1000px;
+  width: 300px;
+  color: whitesmoke;
+  background-color: #151515;
+  box-shadow: 10px 10px 40px 2px rgb(209, 209, 209);
+}
