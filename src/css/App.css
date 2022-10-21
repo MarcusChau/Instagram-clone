@@ -7,11 +7,16 @@
 }
 
 .app__header {
-  align-items: center;
   background-color: white;
   padding: 15px;
   margin: 15px;
   border-bottom: 1px solid lightgrey;
+  object-fit: contain;
+  display: flex;
+  justify-content: space-between;
+}
+
+.app__header-image {
   object-fit: contain;
 }
 
@@ -37,4 +42,10 @@
   border: 1px solid lightgrey;
   cursor: pointer;
   margin: 15px;
+}
+
+.app__posts {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
 }

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './css/App.css';
-import Post from './Post'; // importing post function
+import Post from './Component/Post'; // importing post function
 import Dashboard from './Component/Dashboard.js';
 import SignIn from './Component/SignIn';
 import { auth, db } from './firebase';
 import 'reactjs-popup/dist/index.css';
-import ImageUpload from './ImageUpload';
+import ImageUpload from './Component/ImageUpload';
 
 
 // App function
@@ -31,7 +31,7 @@ function App() {
   useEffect(() => {
 
       // Snapshot of the databse "posts"
-      db.collection('posts').onSnapshot(snapshot => {
+      db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
       // everytime a new post is added, this code is fired
       setPosts(snapshot.docs.map(doc => ({
         id: doc.id,
@@ -43,20 +43,7 @@ function App() {
 
   return (
     <div className="app">
-
-      {/* I want to have... */}
-      {/* Caption input */}
-      {/* File picker */}
-      {/* Post button */}
-
-      {user?.displayName ? (
-        <ImageUpload username={user.displayName} />
-      ) : (
-        <h3>Sorry need to login to upload</h3>
-      )}
       
-
-
       {/* Header */}
       <div className="app__header">
         
@@ -64,31 +51,63 @@ function App() {
         className="app__header-image" 
         src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" 
         alt="Instagram Logo" />
-        
-      </div>
 
 
-      {/* User login, sign up or logout */}
-      {user ? (
-        <button className='logout__button' onClick={() => auth.signOut()}>Logout</button>
-      ):(
-        <div className='app__logincontainer'>
-          <SignIn onClick={() => setOpenSignIn(true)}/>
-          <Dashboard/>
+        {/* User login, sign up or logout */}
+        {user ? (
+          <button className='logout__button' onClick={() => auth.signOut()}>Logout</button>
+        ):(
+          <div className='app__logincontainer'>
+            <SignIn onClick={() => setOpenSignIn(true)}/>
+            <Dashboard/>
+        </div>
+        )}
       </div>
+
+      <div className='app__posts'>
+        {/* Getting Post function from import && using props in order to inherit different posts */}
+        {/* Mapping the posts and looping through them and rendering posts */}
+        <div>
+          {
+            posts.map(({id, post}) => (
+              <Post key={id} username={post.username} caption={post.caption} imageUrl={post.imageUrl} />
+            ))
+          }
+        </div>
+
+        <div>
+          <div>
+            <h2>About</h2>
+            <p>React embedding thinggggg</p>
+
+
+          </div>
+
+          <hr />
+
+          <div>
+            <div>
+              <p>Latest Version</p>
+              <p>1.0.0</p>
+            </div>
+            <br />
+            <div>
+              <p>Created by:</p>
+              <p>Marcus Chau</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+
+
+      {/* Image upload */}
+      {user?.displayName ? (
+        <ImageUpload username={user.displayName} />
+      ) : (
+        <h3>Sorry need to login to upload</h3>
       )}
-
-
-      <h1>Hello this is the instagram clone</h1>
-
-
-      {/* Getting Post function from import && using props in order to inherit different posts */}
-      {/* Mapping the posts and looping through them and rendering posts */}
-      {
-        posts.map(({id, post}) => (
-          <Post key={id} username={post.username} caption={post.caption} imageUrl={post.imageUrl} />
-        ))
-      }
 
     </div>
   );

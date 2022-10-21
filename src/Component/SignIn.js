@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Modal from './Modal/signInModal';
-import './SignIn.css';
+import '../css/SignIn.css';
 
 
 class SignIn extends Component {

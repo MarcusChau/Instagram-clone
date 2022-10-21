@@ -1,5 +1,5 @@
 import React from 'react'; /* rfce command  */
-import './css/Post.css';
+import '../css/Post.css';
 
 
 // Post function 
