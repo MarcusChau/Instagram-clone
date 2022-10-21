@@ -9,6 +9,7 @@
 
 .post__image {
     width: 100%;
+    max-height: 400px;
     object-fit: contain;
     border-top: 1px solid lightgrey;
     border-bottom: 1px solid lightgrey;
@@ -32,4 +33,34 @@
     display: flex;
     align-items: center;
     padding: 15px 25px;
+}
+
+.post__commentbox {
+    display: flex;
+    margin-top: 10px;
+}
+
+.post__button {
+    flex: 0;
+    width: 50px;
+    margin-right: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    padding-right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    color: #6082a3;
+    cursor: pointer;
+}
+
+.post__input {
+    flex: 1;
+    border: none;
+    height: 30px;
+    outline: none;
+}
+
+.post__comments {
+    padding: 10px 25px;
 }
