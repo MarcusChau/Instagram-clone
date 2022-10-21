@@ -137,7 +137,7 @@ useEffect(() => {
             
             <br />
 
-            <h4 id='h4__elem'>Six post captions:</h4>
+            <h4 id='h4__elem'>Recent captions:</h4>
             {
             posts.slice(0, 6).map(({post}) => (
               <p className='captions__profile'>
