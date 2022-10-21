@@ -16,15 +16,15 @@ function App() {
   const [user, setUser] = useState("");
   const [openSignIn, setOpenSignIn] = useState(false);
 
-  useEffect(() => {
-    auth.onAuthStateChanged(function(user) {
-      if (user) {
-        setUser(user);
-      } else {
-        // No user is signed in.
-        setUser("");
-      }
-    })
+useEffect(() => {
+  auth.onAuthStateChanged(function(user) {
+    if (user) {
+      setUser(user);
+    } else {
+      // No user is signed in.
+      setUser("");
+    }
+  })
 }, [user]);
 
 
