@@ -16,7 +16,7 @@ function App() {
   const [user, setUser] = useState("");
   const [openSignIn, setOpenSignIn] = useState(false);
 
-useEffect(() => {
+
   auth.onAuthStateChanged(function(user) {
     if (user) {
       setUser(user);
@@ -25,14 +25,12 @@ useEffect(() => {
       setUser("");
     }
   })
-}, [user]);
 
 
   // userEffect - Runs a piece of code based on a specific conditionm can have multiple of these functions
   useEffect(() => {
-
-      // Snapshot of the databse "posts"
-      db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
+    // Snapshot of the databse "posts"
+    db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
       // everytime a new post is added, this code is fired
       setPosts(snapshot.docs.map(doc => ({
         id: doc.id,
