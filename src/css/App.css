@@ -21,6 +21,7 @@
 
 .app__header-image {
   object-fit: contain;
+  width: 10%;
 }
 
 .logout {
